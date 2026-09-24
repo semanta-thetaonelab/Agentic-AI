@@ -15,6 +15,7 @@
     "@anthropic-ai/sdk": "^0.127.0",
     "openai": "^7.4.0",
     "pngjs": "^7.0.0",
-    "robotjs": "^0.9.1"
+    "robotjs": "^0.9.1",
+    "say": "^0.16.0"
   }
 }
