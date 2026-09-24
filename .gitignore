@@ -9,3 +9,6 @@ npm-debug.log*
 
 # OS
 .DS_Store
+
+# Whisper model weights (large, re-downloadable)
+models/

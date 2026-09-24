@@ -6,13 +6,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node --env-file=.env index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/voice.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.127.0",
+    "mic": "^2.1.2",
     "openai": "^7.4.0",
     "pngjs": "^7.0.0",
     "robotjs": "^0.9.1",
