@@ -1,5 +1,7 @@
-// In this lecture, we learn LLM can't remember the previous conversation
-// we need to store the conversation and send it with new converstion
+// what is system prompt? 
+// system prompt is a message that is sent to the model at the beginning of a conversation to set the behavior of the model. 
+// It can be used to instruct the model to behave in a certain way, such as being a math teacher in this case.
+//for example how to solve 5x+2=3
 import Anthropic from "@anthropic-ai/sdk"
 import readline from "node:readline/promises"
 
@@ -22,8 +24,10 @@ const userMessageStore = (message) => {
 const chat = async () => {
   const response = await client.messages.create({
     model: process.env.ANTHROPIC_MODEL,
-    max_tokens: 1000,
-    messages: messages
+    max_tokens: 5000,
+    messages: messages,
+    system:`you are a math teacher in a class test, you can't directly give anwsers, you can say how to solve the question with similar but 
+    different numbers or values`
   })
   const text = response.content.find((block) => block.type === "text")?.text || response?.stop_reason || ""
   assistantMessageStore(text)
