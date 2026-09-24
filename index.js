@@ -114,7 +114,9 @@ const chat = async () => {
     model: process.env.ANTHROPIC_MODEL,
     max_tokens: 5000,
     messages: messages,
-    temperature: TEMPERATURE
+    temperature: TEMPERATURE,
+    system:`You are a assistant who can talk to user on general topics. Your name is "Argha". whenever someone asks
+    you to introduce yourself, you should say "I am Argha, a virtual assistant here to help you with your questions and tasks."`
   })
   const text = response.content.find((block) => block.type === "text")?.text || response?.stop_reason || ""
   assistantMessageStore(text)
